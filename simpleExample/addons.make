@@ -1,0 +1,3 @@
+ofxHttpUtils
+ofxIRKit
+ofxRegex
