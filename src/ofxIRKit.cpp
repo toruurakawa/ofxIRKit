@@ -21,6 +21,7 @@ pid_t ofxIRKit::popen2(const char *command, const char *filename) {
         
         execl("/bin/sh", "sh", "-c", command, NULL);
         perror("execl");
+        exit(1);
     }
     
     return pid;
@@ -114,6 +115,7 @@ void ofxIRKit::setupWithIp(string _ip) {
 
 
 bool ofxIRKit::ouputSignal(string signalName) {
+    ofFile f;
     stringstream cmdGetDataSS;
     cmdGetDataSS << "curl -i http://" << ip << "/messages";
     string cmdGetDataStr = cmdGetDataSS.str();
@@ -131,7 +133,7 @@ bool ofxIRKit::ouputSignal(string signalName) {
     dataFile << dataStr << endl;
     dataFile.close();
     
-    return true;
+    return f.doesFileExist(dataName.c_str());
 }
 
 void ofxIRKit::sendSignal(string signalName) {
@@ -140,5 +142,6 @@ void ofxIRKit::sendSignal(string signalName) {
     ofBuffer data = ofBufferFromFile(ss.str());
     stringstream ss2;
     ss2 << "http://" << ip << "/messages";
+    cout << ss2.str() << endl;
     httpUtils.postData(ss2.str(), data);
 }
