@@ -2,6 +2,8 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    ofSetLogLevel(OF_LOG_VERBOSE);
+
     bOuputSignal = false;
     irkit.setup();
 //    irkit.setupWithId("irkit****");       // setup with IRKit's id name
@@ -34,7 +36,7 @@ void ofApp::keyPressed(int key){
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
     if (key == 'o') {
-        bOuputSignal = irkit.ouputSignal("signal");
+        bOuputSignal = irkit.outputSignal("signal");
     }
     else if (key == 's') {
         irkit.sendSignal("signal");

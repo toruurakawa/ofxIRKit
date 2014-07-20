@@ -8,26 +8,21 @@
 #pragma once
 #include "ofMain.h"
 #include "ofxHttpUtils.h"
-#include "ofxRegex.h"
+#include "ofxBonjour.h"
 
-class ofxIRKit {
+static const string LogTag = "ofxIRKit";
+
+class ofxIRKit : public ofxBonjourBrowserFoundNotificationReceiverInterface {
     ofxHttpUtils httpUtils;
-    ofxRegex regx;
+    ofxBonjourBrowser bb;
     
-    string irid, ip, data;
-
-    pid_t popen2(const char *command, const char *filename);
-    string getMatchedStrings(string fileName, string s);
-    void execCmdAndOutputToFile(string cmd, string filename, int timeout);
-    string fetchId();
-    string fetchIp();
-    string fetchIpWithId(string irid);
+    string ip;        
+    void foundService(string type, string name, string ip, string domain);
     
 public:
     void setup();
-    void setupWithId(string id);
     void setupWithIp(string ip);
-
-    bool ouputSignal(string signalName);
+    
+    bool outputSignal(string signalName);
     void sendSignal(string signalName);
 };

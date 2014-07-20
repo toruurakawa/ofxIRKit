@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0BE560265BD00F873BAB201D /* ofxHttpUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EE2D60F13FB02255F2068B8 /* ofxHttpUtils.cpp */; };
-		4044841DF600D947D267BAD7 /* ofxIRKit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 068FDB9C84828B7D3D33E757 /* ofxIRKit.cpp */; };
-		9CD7B5F61978465A00B72472 /* ofxRegex.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9CD7B5F31978465A00B72472 /* ofxRegex.cpp */; };
+		4044841DF600D947D267BAD7 /* ofxIRKit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 068FDB9C84828B7D3D33E757 /* ofxIRKit.mm */; };
+		9C0263C7197C33920096EFB6 /* ofxBonjourBrowser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C0263BF197C33920096EFB6 /* ofxBonjourBrowser.mm */; };
+		9C0263C8197C33920096EFB6 /* ofxBonjourPublisher.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C0263C1197C33920096EFB6 /* ofxBonjourPublisher.mm */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -62,12 +63,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		068FDB9C84828B7D3D33E757 /* ofxIRKit.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxIRKit.cpp; path = ../../../addons/ofxIRKit/src/ofxIRKit.cpp; sourceTree = SOURCE_ROOT; };
+		068FDB9C84828B7D3D33E757 /* ofxIRKit.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxIRKit.mm; path = ../../../addons/ofxIRKit/src/ofxIRKit.mm; sourceTree = SOURCE_ROOT; };
 		1EE2D60F13FB02255F2068B8 /* ofxHttpUtils.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxHttpUtils.cpp; path = ../../../addons/ofxHttpUtils/src/ofxHttpUtils.cpp; sourceTree = SOURCE_ROOT; };
 		566E57CED66EC66CCD5BB915 /* ofxHttpUtils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxHttpUtils.h; path = ../../../addons/ofxHttpUtils/src/ofxHttpUtils.h; sourceTree = SOURCE_ROOT; };
-		9CD7B5F31978465A00B72472 /* ofxRegex.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ofxRegex.cpp; sourceTree = "<group>"; };
-		9CD7B5F41978465A00B72472 /* ofxRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxRegex.h; sourceTree = "<group>"; };
-		9CD7B5F51978465A00B72472 /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		9C0263BD197C33920096EFB6 /* ofxBonjour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBonjour.h; sourceTree = "<group>"; };
+		9C0263BE197C33920096EFB6 /* ofxBonjourBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBonjourBrowser.h; sourceTree = "<group>"; };
+		9C0263BF197C33920096EFB6 /* ofxBonjourBrowser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxBonjourBrowser.mm; sourceTree = "<group>"; };
+		9C0263C0197C33920096EFB6 /* ofxBonjourPublisher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBonjourPublisher.h; sourceTree = "<group>"; };
+		9C0263C1197C33920096EFB6 /* ofxBonjourPublisher.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxBonjourPublisher.mm; sourceTree = "<group>"; };
 		AB9240E751C433D7796B9AF3 /* ofxHttpTypes.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxHttpTypes.h; path = ../../../addons/ofxHttpUtils/src/ofxHttpTypes.h; sourceTree = SOURCE_ROOT; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		D0AF3931EF46026883092CBC /* ofxIRKit.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxIRKit.h; path = ../../../addons/ofxIRKit/src/ofxIRKit.h; sourceTree = SOURCE_ROOT; };
@@ -130,21 +133,31 @@
 			name = ofxIRKit;
 			sourceTree = "<group>";
 		};
-		9CD7B5F21978465A00B72472 /* ofxRegex */ = {
+		9C0263A6197C33920096EFB6 /* ofxBonjour */ = {
 			isa = PBXGroup;
 			children = (
-				9CD7B5F31978465A00B72472 /* ofxRegex.cpp */,
-				9CD7B5F41978465A00B72472 /* ofxRegex.h */,
-				9CD7B5F51978465A00B72472 /* readme.txt */,
+				9C0263BC197C33920096EFB6 /* src */,
 			);
-			name = ofxRegex;
-			path = ../../ofxRegex;
+			name = ofxBonjour;
+			path = ../../ofxBonjour;
+			sourceTree = "<group>";
+		};
+		9C0263BC197C33920096EFB6 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				9C0263BD197C33920096EFB6 /* ofxBonjour.h */,
+				9C0263BE197C33920096EFB6 /* ofxBonjourBrowser.h */,
+				9C0263BF197C33920096EFB6 /* ofxBonjourBrowser.mm */,
+				9C0263C0197C33920096EFB6 /* ofxBonjourPublisher.h */,
+				9C0263C1197C33920096EFB6 /* ofxBonjourPublisher.mm */,
+			);
+			path = src;
 			sourceTree = "<group>";
 		};
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
-				9CD7B5F21978465A00B72472 /* ofxRegex */,
+				9C0263A6197C33920096EFB6 /* ofxBonjour */,
 				E5DB4E404488AB3319297A7C /* ofxHttpUtils */,
 				91D30DC2A72A5CB3F991AB07 /* ofxIRKit */,
 			);
@@ -193,7 +206,7 @@
 		DE710CA5F1E16AF9E071B494 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				068FDB9C84828B7D3D33E757 /* ofxIRKit.cpp */,
+				068FDB9C84828B7D3D33E757 /* ofxIRKit.mm */,
 				D0AF3931EF46026883092CBC /* ofxIRKit.h */,
 			);
 			name = src;
@@ -343,11 +356,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CD7B5F61978465A00B72472 /* ofxRegex.cpp in Sources */,
+				9C0263C8197C33920096EFB6 /* ofxBonjourPublisher.mm in Sources */,
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				0BE560265BD00F873BAB201D /* ofxHttpUtils.cpp in Sources */,
-				4044841DF600D947D267BAD7 /* ofxIRKit.cpp in Sources */,
+				4044841DF600D947D267BAD7 /* ofxIRKit.mm in Sources */,
+				9C0263C7197C33920096EFB6 /* ofxBonjourBrowser.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
