@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0BE560265BD00F873BAB201D /* ofxHttpUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1EE2D60F13FB02255F2068B8 /* ofxHttpUtils.cpp */; };
-		4044841DF600D947D267BAD7 /* ofxIRKit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 068FDB9C84828B7D3D33E757 /* ofxIRKit.mm */; };
+		4044841DF600D947D267BAD7 /* ofxIRKit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 068FDB9C84828B7D3D33E757 /* ofxIRKit.cpp */; };
+		955E172C197C4685007F6D6B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 955E172B197C4685007F6D6B /* Carbon.framework */; };
 		9C0263C7197C33920096EFB6 /* ofxBonjourBrowser.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C0263BF197C33920096EFB6 /* ofxBonjourBrowser.mm */; };
 		9C0263C8197C33920096EFB6 /* ofxBonjourPublisher.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9C0263C1197C33920096EFB6 /* ofxBonjourPublisher.mm */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
@@ -63,9 +64,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		068FDB9C84828B7D3D33E757 /* ofxIRKit.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxIRKit.mm; path = ../../../addons/ofxIRKit/src/ofxIRKit.mm; sourceTree = SOURCE_ROOT; };
+		068FDB9C84828B7D3D33E757 /* ofxIRKit.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxIRKit.cpp; path = ../../../addons/ofxIRKit/src/ofxIRKit.cpp; sourceTree = SOURCE_ROOT; };
 		1EE2D60F13FB02255F2068B8 /* ofxHttpUtils.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxHttpUtils.cpp; path = ../../../addons/ofxHttpUtils/src/ofxHttpUtils.cpp; sourceTree = SOURCE_ROOT; };
 		566E57CED66EC66CCD5BB915 /* ofxHttpUtils.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxHttpUtils.h; path = ../../../addons/ofxHttpUtils/src/ofxHttpUtils.h; sourceTree = SOURCE_ROOT; };
+		955E172B197C4685007F6D6B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		9C0263BD197C33920096EFB6 /* ofxBonjour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBonjour.h; sourceTree = "<group>"; };
 		9C0263BE197C33920096EFB6 /* ofxBonjourBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ofxBonjourBrowser.h; sourceTree = "<group>"; };
 		9C0263BF197C33920096EFB6 /* ofxBonjourBrowser.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ofxBonjourBrowser.mm; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				955E172C197C4685007F6D6B /* Carbon.framework in Frameworks */,
 				E7F985F815E0DEA3003869B5 /* Accelerate.framework in Frameworks */,
 				E7E077E815D3B6510020DFD4 /* QTKit.framework in Frameworks */,
 				E4EB6799138ADC1D00A09F29 /* GLUT.framework in Frameworks */,
@@ -167,6 +170,7 @@
 		BBAB23C913894ECA00AA2426 /* system frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				955E172B197C4685007F6D6B /* Carbon.framework */,
 				E7F985F515E0DE99003869B5 /* Accelerate.framework */,
 				E4C2424410CC5A17004149E2 /* AppKit.framework */,
 				E4C2424510CC5A17004149E2 /* Cocoa.framework */,
@@ -206,7 +210,7 @@
 		DE710CA5F1E16AF9E071B494 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				068FDB9C84828B7D3D33E757 /* ofxIRKit.mm */,
+				068FDB9C84828B7D3D33E757 /* ofxIRKit.cpp */,
 				D0AF3931EF46026883092CBC /* ofxIRKit.h */,
 			);
 			name = src;
@@ -360,7 +364,7 @@
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				0BE560265BD00F873BAB201D /* ofxHttpUtils.cpp in Sources */,
-				4044841DF600D947D267BAD7 /* ofxIRKit.mm in Sources */,
+				4044841DF600D947D267BAD7 /* ofxIRKit.cpp in Sources */,
 				9C0263C7197C33920096EFB6 /* ofxBonjourBrowser.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
