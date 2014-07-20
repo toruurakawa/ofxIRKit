@@ -21,10 +21,10 @@ class ofxIRKit : public ofxBonjourBrowserFoundNotificationReceiverInterface {
     
 public:
     void setup();
-    void setupWithIp(string ip);
+    void setupWithIp(const string &ip);
     
-    bool outputSignal(string signalName);
-    void sendSignal(string signalName);
+    bool outputSignal(const string &signalName);
+    void sendSignal(const string &signalName);
     
     bool isRequestable() const;
 };
