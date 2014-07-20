@@ -10,9 +10,9 @@
 #include "ofxHttpUtils.h"
 #include "ofxBonjour.h"
 
-static const string LogTag = "ofxIRKit";
-
 class ofxIRKit : public ofxBonjourBrowserFoundNotificationReceiverInterface {
+    static const string LogTag;
+    
     ofxHttpUtils httpUtils;
     ofxBonjourBrowser bb;
     
@@ -25,4 +25,6 @@ public:
     
     bool outputSignal(string signalName);
     void sendSignal(string signalName);
+    
+    bool isRequestable() const;
 };
