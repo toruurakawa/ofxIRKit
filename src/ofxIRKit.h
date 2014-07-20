@@ -17,7 +17,7 @@ class ofxIRKit : public ofxBonjourBrowserFoundNotificationReceiverInterface {
     ofxBonjourBrowser bb;
     
     string ip;        
-    void foundService(string type, string name, string ip, string domain);
+    virtual void foundService(const string &type, const string &name, const string &ip, const string &domain);
     
 public:
     void setup();

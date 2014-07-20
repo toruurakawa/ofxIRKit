@@ -22,7 +22,7 @@ void ofxIRKit::setupWithIp(const string &_ip) {
     ip = _ip;
 }
 
-void ofxIRKit::foundService(string type, string name, string _ip, string domain) {
+void ofxIRKit::foundService(const string &type, const string &name, const string &_ip, const string &domain) {
     ip = _ip;
     ofLogVerbose(LogTag) << "found: " << type << " : " << name << " = " << ip;
     bb.stopBrowse();
