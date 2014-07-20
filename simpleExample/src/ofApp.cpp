@@ -6,7 +6,6 @@ void ofApp::setup(){
 
     bOuputSignal = false;
     irkit.setup();
-//    irkit.setupWithId("irkit****");       // setup with IRKit's id name
 //    irkit.setupWithIp("192.168.11.18");   // setup with IRKit's IP address
 }
 
