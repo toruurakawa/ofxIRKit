@@ -18,20 +18,20 @@ void ofxIRKit::setup()
     bb.startBrowse("_irkit._tcp");
 }
 
-void ofxIRKit::setupWithIp(string _ip) {
+void ofxIRKit::setupWithIp(const string &_ip) {
     ip = _ip;
 }
 
-void ofxIRKit::foundService(string type, string name, string _ip, string domain) {
+void ofxIRKit::foundService(const string &type, const string &name, const string &_ip, const string &domain) {
     ip = _ip;
     ofLogVerbose(LogTag) << "found: " << type << " : " << name << " = " << ip;
     bb.stopBrowse();
 }
 
-bool ofxIRKit::outputSignal(string signalName) {
+bool ofxIRKit::outputSignal(const string &signalName) {
     if(isRequestable()) {
         ofFile f;
-        f.open(ofToDataPath(signalName += ".json"), ofFile::WriteOnly);
+        f.open(ofToDataPath(signalName + ".json"), ofFile::WriteOnly);
         stringstream urlSs;
         urlSs << "http://" << ip << "/messages";
         ofxHttpResponse responce = httpUtils.getUrl(urlSs.str());
@@ -43,14 +43,14 @@ bool ofxIRKit::outputSignal(string signalName) {
     }
 }
 
-void ofxIRKit::sendSignal(string signalName) {
+void ofxIRKit::sendSignal(const string &signalName) {
     if(isRequestable()) {
         stringstream ss;
         ss << signalName << ".json";
         ofBuffer data = ofBufferFromFile(ss.str());
         stringstream ss2;
         ss2 << "http://" << ip << "/messages";
-        cout << ss2.str() << endl;
+        ofLogVerbose(LogTag) << ss2.str();
         httpUtils.postData(ss2.str(), data);
     } else {
         ofLogError(LogTag) << "ip is not known.";
